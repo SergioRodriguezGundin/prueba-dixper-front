@@ -1,0 +1,42 @@
+@import '../../../assets/styles/abstracts/variables';
+
+.layout {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-rows: repeat(2, 0.4fr) repeat(2, 1fr) 0.4fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    height: 100vh;
+    .box {
+        grid-area: 2 / 2 / 5 / 5;
+        display: flex;
+        flex-direction: column;
+        padding: 2%;
+        border-radius: 12px;
+        box-shadow: $box-shadow-card;
+        .container-resume {
+            grid-area: 2 / 2 / 3 / 5;
+            display: flex;
+            align-items: center;
+            &-user {
+                display: flex;
+            }
+        }
+        .container-user {
+            grid-area: 3 / 2 / 5 / 5;
+            display: flex;
+            justify-content: space-around;
+            height: 100%;
+            &--detail {
+                width: 35%;
+                height: 100%;
+            }
+            &--repositories {
+                width: 65%;
+                height: 100%;
+                flex-direction: column;
+                overflow-y: scroll;
+            }
+        }
+    }
+}

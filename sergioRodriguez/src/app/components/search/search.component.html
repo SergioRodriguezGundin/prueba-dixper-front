@@ -1,0 +1,20 @@
+<nav class="navbar">
+  <form [formGroup]="userForm" (ngSubmit)="submit()" class="form-inline">
+    <div class="search-input">
+      <input
+        class="form-control mr-sm-2"
+        type="search"
+        formControlName="name"
+        placeholder="Search"
+        aria-label="Search"
+        required
+      />
+      <div class="invalid-feedback" *ngIf="invalidInput === true">
+        Please give me a name!
+      </div>
+    </div>
+    <button class="btn dx-btn" type="submit">
+      Search
+    </button>
+  </form>
+</nav>

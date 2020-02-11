@@ -1,0 +1,23 @@
+<div class="layout">
+  <div class="box">
+    <section class="container-resume">
+        <div class="container-resume-user">
+          <span class="icon-back">
+            <i class="far fa-arrow-alt-circle-left"></i>
+          </span>
+          <span>{{user?.login}}</span>
+        </div>
+        <app-resume-repository [resumeRepositories]="resumeRepositories"></app-resume-repository>
+    </section>
+    <section class="container-user">
+      <div class="container-user--detail">
+        <app-detail-user [user]="user"></app-detail-user>
+      </div>
+      <div class="container-user--repositories">
+        <div class="container-repository" *ngFor="let repository of user?.repositories">
+          <app-repository [repository]="repository"></app-repository>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

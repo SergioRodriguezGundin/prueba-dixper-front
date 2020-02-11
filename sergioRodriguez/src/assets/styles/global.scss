@@ -1,0 +1,45 @@
+@import './abstracts/variables';
+@import './base/typography';
+
+body {
+    margin: 0;
+    height: 100vh;
+    background-color: $light;
+}
+
+.neumorphism-light {
+    background: $light;
+    box-shadow: $box-shadow-light;
+    max-height: 80%;
+}
+
+.neumorphism-dark {
+    background: $dark;
+    box-shadow: $box-shadow-dark;
+    max-height: 80%;
+}
+
+/* ScrollBar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $gray-50; 
+    border-radius: 10px;
+  }
+   
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: $secoundary; 
+    border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: $secoundary; 
+  }
+

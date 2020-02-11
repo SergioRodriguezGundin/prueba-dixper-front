@@ -1,0 +1,19 @@
+$light: #FFFFFF;
+$dark: #262A3B;
+$gray-50: #F0EDF3;
+$primary: #23DE72;
+$secoundary: #FF4D4E;
+
+/* NEUMORPHISM STYLE */
+
+$box-shadow-light: 8px 8px 16px #c3c7cd, 
+-8px -8px 16px #fdffff;
+$box-shadow-dark: 8px 8px 16px #212533, 
+-8px -8px 16px #2b2f43;
+
+$box-shadow-light-inside: inset 8px 8px 16px #c3c7cd, 
+inset -8px -8px 16px #fdffff;
+$box-shadow-dark-inside: inset 8px 8px 16px #212533, 
+inset -8px -8px 16px #2b2f43;
+
+$box-shadow-card: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
