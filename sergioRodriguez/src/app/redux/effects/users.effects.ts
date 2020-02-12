@@ -6,7 +6,7 @@ import { map, switchMap, mergeMap, catchError } from 'rxjs/operators';
 
 import * as usersActions from 'src/app/redux/actions/users.actions';
 import { Repository } from 'src/app/redux/models/repository.model';
-import { GithubService } from 'src/app/api/github.service';
+import { GithubService } from 'src/app/services/api/github.service';
 
 @Injectable()
 export class UsersEffects {

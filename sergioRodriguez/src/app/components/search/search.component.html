@@ -1,16 +1,19 @@
 <nav class="navbar">
-  <form [formGroup]="userForm" (ngSubmit)="submit()" class="form-inline">
+  <form [formGroup]="userForm" novalidate (ngSubmit)="submit()" class="form-inline">
     <div class="search-input">
       <input
         class="form-control mr-sm-2"
         type="search"
         formControlName="name"
+        id="name" 
         placeholder="Search"
         aria-label="Search"
         required
       />
-      <div class="invalid-feedback" *ngIf="invalidInput === true">
-        Please give me a name!
+      <div *ngIf="name.invalid && (name.dirty || name.touched)">
+        <div *ngIf="name.errors.minlength" class="feedback invalid-feedback">
+          Please give me min three characters!
+        </div>
       </div>
     </div>
     <button class="btn dx-btn" type="submit">

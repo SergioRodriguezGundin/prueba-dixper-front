@@ -22,7 +22,10 @@ import { SearchComponent } from 'src/app/components/search/search.component';
 import { CardUserComponent } from 'src/app/components/card-user/card-user.component';
 
 /* Api (Services) */
-import { GithubService } from 'src/app/api/github.service';
+import { GithubService } from 'src/app/services/api/github.service';
+import { LoadingComponent } from 'src/app/components/common/loading/loading.component';
+import { EmptyStateComponent } from 'src/app/components/common/empty-state/empty-state.component';
+import { ErrorComponent } from 'src/app/components/common/error/error.component';
 
 @NgModule({
   imports: [
@@ -42,7 +45,10 @@ import { GithubService } from 'src/app/api/github.service';
     RepositoryComponent,
     ResumeRepositoryComponent,
     SearchComponent,
-    CardUserComponent
+    CardUserComponent,
+    LoadingComponent,
+    EmptyStateComponent,
+    ErrorComponent
   ],
   providers: [GithubService]
 })

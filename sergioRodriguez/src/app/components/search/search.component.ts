@@ -1,5 +1,5 @@
 import { Component, OnInit, EventEmitter, Output } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-search',
@@ -9,10 +9,11 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SearchComponent implements OnInit {
 
   @Output() spreadUser = new EventEmitter<string>();
-  public invalidInput = false;
 
-  public userForm = new FormGroup ({
-    name: new FormControl(''),
+  public userForm: FormGroup = new FormGroup ({
+    name: new FormControl('', [
+      Validators.minLength(4)
+    ]),
   });
   
   constructor() { }
@@ -20,11 +21,10 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  get name() { return this.userForm.get('name'); }
+
   public submit() {
-    if (this.userForm.value.name === '') {
-      this.invalidInput = true;
-    } else {
-      this.invalidInput = false;
+    if (this.userForm.valid) {
       this.spreadUser.emit(this.userForm.value.name);
     }
   }

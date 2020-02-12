@@ -10,6 +10,7 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ScoreGuard } from './services/guards/score-guard.service';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { AppComponent } from './app.component';
       logOnly: environment.production,
     }),
   ],
-  providers: [],
+  providers: [ScoreGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
