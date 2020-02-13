@@ -12,9 +12,12 @@ import * as fromConfig from '../app/redux/reducers/config.reducer';
 })
 export class AppComponent implements OnInit { 
   public error$: Observable<boolean>;
+  public theme$: Observable<string>;
+
   constructor(private store: Store<AppState>) {}
 
   ngOnInit(): void {
+    this.theme$ = this.store.pipe(select(fromConfig.getTheme), map((theme: string) => theme));
     this.error$ = this.store.pipe(select(fromConfig.getError), map((error: boolean) => error));
   }
 }

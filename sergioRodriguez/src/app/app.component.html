@@ -1,2 +1,7 @@
-<router-outlet></router-outlet>
+<app-switch-theme></app-switch-theme>
 <app-error [ngClass]="(error$ | async) ? 'show' : 'hide'" *ngIf="(error$ | async)"></app-error>
+<div class="layout" [ngClass]="((theme$ | async) === 'light') ? 'light' : 'dark'">
+  <section class="box" [ngClass]="((theme$ | async) === 'light') ? 'neumorphism-light' : 'neumorphism-dark'">
+    <router-outlet></router-outlet>
+  </section>
+</div>

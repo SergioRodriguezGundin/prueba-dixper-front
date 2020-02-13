@@ -1,18 +1,23 @@
 @import '../../../assets/styles/abstracts/variables';
 
-.layout {
-    .box {
-        .container-home {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            align-items: center;
-            height: 100%;
-            text-align: center;
-            > div {
-                font-family: $dx-presStart;
-                font-size: $dx-big-xl;
-            }
-        }
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    height: 100%; 
+}
+
+.container-home {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    > div {
+        font-family: $dx-presStart;
+        font-size: $dx-big-xl;
     }
 }

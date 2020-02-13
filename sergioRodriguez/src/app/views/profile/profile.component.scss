@@ -1,79 +1,77 @@
 @import '../../../assets/styles/abstracts/variables';
 @import '../../../assets/styles/mixins';
 
-.layout {
-    .box {
-        .container-resume {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            height: 15%;
-            &-user {
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%; 
+}
+
+.container-resume {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 15%;
+    &-user {
+        display: flex;
+        align-items: center;
+        width: 25%;
+        a {
+            text-decoration: none;
+            color: $gray600;
+            .icon-back {
                 display: flex;
+                justify-content: center;
                 align-items: center;
-                width: 25%;
-                a {
-                    text-decoration: none;
-                    color: $gray600;
-                    .icon-back {
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        i {
-                            font-size: 3.4em;
-                        }
-                    }
-                }
-                .name {
-                    font-size: $dx-small;
-                    margin-left: 4%;
+                i {
+                    font-size: 3.4em;
                 }
             }
-            &-repository {
-                width: 75%;
-            }
         }
-        .container-user {
-            display: flex;
-            justify-content: space-around;
-            height: 95%;
-            padding: 2% 0;
-            &-detail {
-                width: 35%;
-                height: 95%;
-                overflow: hidden;
-            }
-            &-repositories {
-                width: 65%;
-                height: 90%;
-                flex-direction: column;
-                overflow-y: scroll;
-            }
+        .name {
+            font-size: $dx-small;
+            margin-left: 4%;
         }
+    }
+    &-repository {
+        width: 75%;
+    }
+}
+.container-user {
+    display: flex;
+    justify-content: space-around;
+    height: 95%;
+    padding: 2% 0;
+    &-detail {
+        width: 35%;
+        height: 95%;
+        overflow: hidden;
+    }
+    &-repositories {
+        width: 65%;
+        height: 90%;
+        flex-direction: column;
+        overflow-y: scroll;
     }
 }
 
-
 @include tablet {
-    .layout {
-        .box {
-            .container-resume {
-                &-repository {
-                    display: none;
-                }
-            }
-            .container-user {
-                flex-direction: column;
-                height: auto;
-                &-detail {
-                    width: 100%;
-                    height: auto;
-                }
-                &-repositories {
-                    width: 100%;
-                    height: auto;
-                }
-            }
-        }
+.container-resume {
+    &-repository {
+        display: none;
     }
+}
+.container-user {
+    flex-direction: column;
+    height: auto;
+    &-detail {
+        width: 100%;
+        height: auto;
+    }
+    &-repositories {
+        width: 100%;
+        height: auto;
+    }
+}
 }

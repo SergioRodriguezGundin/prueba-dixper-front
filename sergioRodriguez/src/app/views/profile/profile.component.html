@@ -1,25 +1,21 @@
-<div class="layout">
-  <div class="box">
-    <section class="container-resume">
-      <div class="container-resume-user">
-        <a [routerLink]="['/users']">
-          <span class="icon-back" >
-            <i class="far fa-arrow-alt-circle-left"></i>
-          </span>
-        </a>
-        <div class="name">{{user?.login}}</div>
-      </div>
-      <app-resume-repository class="container-resume-repository"></app-resume-repository>
-    </section>
-    <section class="container-user">
-      <app-loading class="container-loading" *ngIf="(loadingSelectedUser$ | async)"></app-loading>
-      <app-detail-user [user]="user" class="container-user-detail"></app-detail-user>
-      <div class="container-user-repositories">
-        <app-loading class="container-loading" *ngIf="(loadingRepositories$ | async)"></app-loading>
-        <div class="container-repository" *ngFor="let repository of user?.repositories">
-          <app-repository [repository]="repository"></app-repository>
-        </div>
-      </div>
-    </section>
+<section class="container-resume">
+  <div class="container-resume-user">
+    <a [routerLink]="['/users']">
+      <span class="icon-back" >
+        <i class="far fa-arrow-alt-circle-left"></i>
+      </span>
+    </a>
+    <div class="name">{{user?.login}}</div>
   </div>
-</div>
+  <app-resume-repository class="container-resume-repository"></app-resume-repository>
+</section>
+<section class="container-user">
+  <app-loading class="container-loading" *ngIf="(loadingSelectedUser$ | async)"></app-loading>
+  <app-detail-user [user]="user" class="container-user-detail" *ngIf="!(loadingSelectedUser$ | async)"></app-detail-user>
+  <div class="container-user-repositories">
+    <app-loading class="container-loading" *ngIf="(loadingRepositories$ | async)"></app-loading>
+    <div class="container-repository" *ngFor="let repository of user?.repositories">
+      <app-repository [repository]="repository"></app-repository>
+    </div>
+  </div>
+</section>

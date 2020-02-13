@@ -6,8 +6,8 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $gray50;
   border-radius: 10px;
+  border: 1px solid $gray400;
   margin: 2%;
   &-left {
     display: flex;

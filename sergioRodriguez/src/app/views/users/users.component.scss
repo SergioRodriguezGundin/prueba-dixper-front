@@ -1,61 +1,56 @@
 @import '../../../assets/styles/abstracts/variables';
 @import '../../../assets/styles/mixins';
 
-.layout {
-    .box {
-        .container-search {
-            display: flex;
-            align-items: center;
-            margin-bottom: 2%;
-            height: 15%;
-            &-item {
-                width: 45%;
-            }
-        }
-        .container-users {
-            display: flex;
-            flex-wrap: wrap;
-            overflow-y: scroll;
-            align-items: center;
-            justify-content: center;
-            height: 85%;
-            .github-user {
-                width: 33%;
-                padding: 0 20px 20px;
-                &:hover {
-                    opacity: .5;
-                    transition: .9s;
-                }
-            }
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%; 
+}
+
+.container-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    height: 15%;
+    &-item {
+        width: 45%;
+    }
+}
+.container-users {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    .github-user {
+        width: 33%;
+        padding: 0 20px 20px;
+        &:hover {
+            opacity: .5;
+            transition: .9s;
         }
     }
 }
 
 @include desktop {
-    .layout {
-        .box {
-            .container-search {
-                &-item {
-                    width: 100%;
-                }
-            }
-            .container-users {
-                .github-user {
-                    width: 50%;
-                }
-            }
+    .container-search {
+        &-item {
+            width: 100%;
+        }
+    }
+    .container-users {
+        .github-user {
+            width: 50%;
         }
     }
 }
 
 @include tablet {
-    .layout {
-        .box {
-            .container-users {
-                .github-user {
-                    width: 100%;
-                }
-            }
+    .container-users {
+        .github-user {
+            width: 100%;
         }
     }
 }

@@ -1,3 +1,4 @@
 export interface config {
-  error: boolean
+  error: boolean,
+  theme: string
 }
