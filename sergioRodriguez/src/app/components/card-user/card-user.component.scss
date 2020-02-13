@@ -26,6 +26,7 @@
       flex-direction: column;
       justify-content: center;
       align-items: flex-end;
+      overflow: auto;
       .actions {
         display: flex;
         color: $secoundary;
