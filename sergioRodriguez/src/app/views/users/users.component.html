@@ -1,14 +1,11 @@
-<div class="layout">
-  <section class="box">
-    <section class="container-search">
-      <app-search (spreadUser)="getUserToSearch($event)" ></app-search>
-    </section>
-    <section class="container-users" *ngIf="(users$ | async).length > 0">
-      <div class="github-user" *ngFor="let user of (users$ | async)">
-        <app-card-user [user]="user"></app-card-user>
-      </div>
-    </section>
-    <app-loading *ngIf="(loadingUsers$ | async)"></app-loading>
-    <app-empty-state *ngIf="(users$ | async).length === 0 && !(loadingUsers$ | async)"></app-empty-state>
-  </section>
-</div>
+<section class="container-search">
+  <app-search class="container-search-item" (spreadUser)="getUserToSearch($event)"></app-search>
+</section>
+<section class="container-users" *ngIf="(users$ | async).length > 0">
+  <div class="github-user" *ngFor="let user of (users$ | async)">
+    <app-card-user [user]="user"></app-card-user>
+  </div>
+</section>
+<app-loading class="container-loading" *ngIf="(loadingUsers$ | async)"></app-loading>
+<app-empty-state class="container-state" *ngIf="(users$ | async).length === 0 && !(loadingUsers$ | async)">
+</app-empty-state>

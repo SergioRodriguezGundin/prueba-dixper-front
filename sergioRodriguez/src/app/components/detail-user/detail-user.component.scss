@@ -1,4 +1,29 @@
+@import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
+
 .profile {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
+  img {
+    height: 75%;
+    width: 75%;
+    border-radius: 10px;
+  }
+  &-biography {
+    font-size: $dx-small;
+    margin: 2% 0;
+  }
+  &-others {
+    color: $gray200;
+  }
+}
+
+@include mobile {
+  .profile {
+    align-items: center;
+    &-biography {
+      text-align: center;
+    }
+  }
 }

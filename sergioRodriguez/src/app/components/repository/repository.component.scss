@@ -1,12 +1,13 @@
 @import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
 
 .repository {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $gray-50;
   border-radius: 10px;
+  border: 1px solid $gray400;
   margin: 2%;
   &-left {
     display: flex;
@@ -17,24 +18,40 @@
     &-type {
       display: flex;
       align-items: center;
-      writing-mode: vertical-lr;
-      text-orientation: upright;
-      background-color: black;
+      position: relative;
+      width: 12%;
+      min-height: 120px;
       border-radius: 10px 0 0 10px;
-      width: 8%;
-      .public {
-        color: $primary;
+      color: $white;
+      > span {
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        position: absolute;
+        bottom: 0px;
+        left: 25%;
+        transform: rotate(270deg);
+        transform-origin: 0 0;
       }
-      .private {
-        
-        color: $secoundary;
-      }
+    }
+    .public {
+      background-color: $primary;
+    }
+    .private {
+      background-color: $secoundary;
     }
     &-info {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
+      width: 88%;
       margin-left: 4%;
+      .name {
+        font-size: $dx-medium;
+      }
+      .created {
+        color: $gray200;
+        font-size: $dx-small;
+      }
     }
   }
   &-right {
@@ -45,8 +62,39 @@
     width: 50%;
     &-size,  &-forks {
       display: flex;
-      color: $secoundary;
-      font-size: 22px;
+      font-size: $dx-small;
+      .public {
+        color: $primary;
+      }
+      .private {
+        color: $secoundary;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .repository {
+    &-left {
+      &-info {
+        .name {
+          font-size: $dx-small;
+        }
+        .created {
+          font-size: $dx-small-xs;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .repository {
+    &-left {
+      width: 100%;
+    }
+    &-right {
+      display: none;
     }
   }
 }

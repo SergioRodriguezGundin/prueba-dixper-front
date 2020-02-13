@@ -1,46 +1,56 @@
 @import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
 
-.layout {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 0.4fr) repeat(2, 1fr) 0.4fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 100vh;
-    .box {
-        grid-area: 2 / 2 / 5 / 5;
-        display: flex;
-        flex-direction: column;
-        padding: 2%;
-        border-radius: 12px;
-        box-shadow: $box-shadow-card;
+:host {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 100%; 
+}
+
+.container-search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2%;
+    height: 15%;
+    &-item {
+        width: 45%;
     }
-    .container-search {
-        grid-area: 2 / 2 / 3 / 5;
-        display: flex;
-        align-items: center;
-        margin-bottom: 2%;
-    }
-    .container-users {
-        grid-area: 3 / 2 / 5 / 5;
-        display: flex;
-        flex-wrap: wrap;
-        overflow-y: scroll;
-        align-items: center;
-        justify-content: center;
-        .github-user {
-            padding: 0 20px 20px;
-            &:hover {
-                opacity: .5;
-                transition: .9s;
-            }
+}
+.container-users {
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    align-items: center;
+    justify-content: center;
+    height: 85%;
+    .github-user {
+        width: 33%;
+        padding: 0 20px 20px;
+        &:hover {
+            opacity: .5;
+            transition: .9s;
         }
     }
-    .loading, .empty {
-        grid-area: 3 / 2 / 5 / 5;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+}
+
+@include desktop {
+    .container-search {
+        &-item {
+            width: 100%;
+        }
+    }
+    .container-users {
+        .github-user {
+            width: 50%;
+        }
+    }
+}
+
+@include tablet {
+    .container-users {
+        .github-user {
+            width: 100%;
+        }
     }
 }

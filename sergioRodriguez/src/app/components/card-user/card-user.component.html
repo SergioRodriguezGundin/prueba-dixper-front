@@ -1,12 +1,17 @@
-<a class="dx-card" [routerLink]="['/users', user.login]" routerLinkActive="router-link-active">
-  <img class="card-img-top" src="{{user.avatar_url}}" alt="github user" />
-  <div class="card-body">
-    <h5 class="card-title">{{user.login}}</h5>
-    <div class="actions">
-      <div>Go to profile</div>
-      <span>
-        <i class="fas fa-arrow-right"></i>
-      </span>
+<div class="dx-card" [routerLink]="['/users', user.login]" routerLinkActive="router-link-active">
+  <img class="card-img" src="{{user.avatar_url}}" alt="github user" />
+  <div class="overlay">
+    <div class="card-body">
+      <div class="card-body-info">
+        <h5 class="title">{{user.login}}</h5>
+        <div class="id">{{user.id}}</div>
+      </div>
+      <div class="card-body-actions">
+        <div>Go to profile</div>
+        <span>
+          <i class="fas fa-arrow-right"></i>
+        </span>
+      </div>
     </div>
   </div>
-</a>
+</div>
