@@ -8,7 +8,7 @@
         <app-card-user [user]="user"></app-card-user>
       </div>
     </section>
-    <app-loading *ngIf="(loadingUsers$ | async)"></app-loading>
-    <app-empty-state *ngIf="(users$ | async).length === 0 && !(loadingUsers$ | async)"></app-empty-state>
+    <app-loading class="container-loading" *ngIf="(loadingUsers$ | async)"></app-loading>
+    <app-empty-state class="container-state" *ngIf="(users$ | async).length === 0 && !(loadingUsers$ | async)"></app-empty-state>
   </section>
 </div>

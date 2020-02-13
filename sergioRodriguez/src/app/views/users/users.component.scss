@@ -14,33 +14,27 @@
         padding: 2%;
         border-radius: 12px;
         box-shadow: $box-shadow-card;
-    }
-    .container-search {
-        grid-area: 2 / 2 / 3 / 5;
-        display: flex;
-        align-items: center;
-        margin-bottom: 2%;
-    }
-    .container-users {
-        grid-area: 3 / 2 / 5 / 5;
-        display: flex;
-        flex-wrap: wrap;
-        overflow-y: scroll;
-        align-items: center;
-        justify-content: center;
-        .github-user {
-            padding: 0 20px 20px;
-            &:hover {
-                opacity: .5;
-                transition: .9s;
+        .container-search {
+            display: flex;
+            align-items: center;
+            margin-bottom: 2%;
+            height: 15%;
+        }
+        .container-users {
+            display: flex;
+            flex-wrap: wrap;
+            overflow-y: scroll;
+            align-items: center;
+            justify-content: center;
+            height: 85%;
+            .github-user {
+                width: 33%;
+                padding: 0 20px 20px;
+                &:hover {
+                    opacity: .5;
+                    transition: .9s;
+                }
             }
         }
-    }
-    .loading, .empty {
-        grid-area: 3 / 2 / 5 / 5;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
     }
 }

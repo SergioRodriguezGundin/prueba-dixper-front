@@ -1,7 +1,15 @@
 .resume-repository {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
     .item {
+        width: 33%;
+        display: flex;
+        justify-content: flex-end;
+        font-size: 2em;
         &-number {
             color: black;
+            margin-right: 2%;
         }
         &-text {
             color: grey; 

@@ -1,5 +1,11 @@
 @import './abstracts/variables';
-@import './base/typography';
+
+@font-face {
+  font-family: $dx-presStart;
+  src: url('../fonts/press-start-2p-v8-latin-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body {
     margin: 0;
@@ -10,13 +16,22 @@ body {
 .neumorphism-light {
     background: $light;
     box-shadow: $box-shadow-light;
-    max-height: 80%;
+    border-radius: 12px;
 }
 
 .neumorphism-dark {
     background: $dark;
     box-shadow: $box-shadow-dark;
-    max-height: 80%;
+    border-radius: 12px;
+}
+
+.container {
+  &-loading, &-state {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
 }
 
 /* ScrollBar */
@@ -28,7 +43,7 @@ body {
   
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px $gray-50; 
+    box-shadow: inset 0 0 5px $gray50; 
     border-radius: 10px;
   }
    
@@ -43,3 +58,41 @@ body {
     background: $secoundary; 
   }
 
+.retro-btn {
+  position: relative;
+  background: $primary;
+  font-family: $dx-presStart;
+  padding: 20px;
+  text-decoration: none; 
+  color: white;
+  text-align: center;
+  box-shadow: inset (-4px) (-4px) 0px 0px #4AA52E;
+  &:before,
+  &:after {
+  content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      box-sizing: content-box;
+  }
+
+  &:before {
+      top: -6px;
+      left: 0;
+      border-top: 6px black solid;
+      border-bottom: 6px black solid;
+  }
+
+  &:after {
+      left: -6px;
+      top: 0;
+      border-left: 6px black solid;
+      border-right: 6px black solid;
+  }
+
+  &:hover,
+    &:focus {
+        background: #76c442;
+        box-shadow: inset (-4px*1.5) (-4px*1.5) 0px 0px #4AA52E;
+    }
+}

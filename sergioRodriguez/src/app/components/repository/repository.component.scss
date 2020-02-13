@@ -5,7 +5,7 @@
   flex-direction: row;
   justify-content: space-around;
   align-items: center;
-  background-color: $gray-50;
+  background-color: $gray50;
   border-radius: 10px;
   margin: 2%;
   &-left {
@@ -17,24 +17,28 @@
     &-type {
       display: flex;
       align-items: center;
-      writing-mode: vertical-lr;
+      writing-mode: tb-rl;
+      writing-mode: vertical-rl;
       text-orientation: upright;
-      background-color: black;
       border-radius: 10px 0 0 10px;
-      width: 8%;
-      .public {
-        color: $primary;
-      }
-      .private {
-        
-        color: $secoundary;
-      }
+      width: 10%;
+      color: $white;
+    }
+    .public {
+      background-color: $primary;
+    }
+    .private {
+      background-color: $secoundary;
     }
     &-info {
       display: flex;
       flex-direction: column;
-      align-items: center;
+      align-items: flex-start;
       margin-left: 4%;
+      > div {
+        color: $gray500;
+        font-size: 14px;
+      }
     }
   }
   &-right {
@@ -45,8 +49,13 @@
     width: 50%;
     &-size,  &-forks {
       display: flex;
-      color: $secoundary;
       font-size: 22px;
+      .public {
+        color: $primary;
+      }
+      .private {
+        color: $secoundary;
+      }
     }
   }
 }

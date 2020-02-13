@@ -75,6 +75,7 @@ export function usersReducer(state = initialState, action: fromUsers.usersGithub
                 selected: {
                     ...state.selected,
                     user: action.user,
+                    loading: false,
                 },
             };
         case fromUsers.GET_REPOSITORIES_BY_USER:

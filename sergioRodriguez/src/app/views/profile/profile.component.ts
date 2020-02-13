@@ -17,10 +17,12 @@ export class ProfileComponent implements OnInit, OnDestroy {
 
   private selectedUserSubscription: Subscription
   public selectedUser$: Observable<BaseGithubUser>;
+  public loadingSelectedUser$ : Observable<boolean>;
+  public loadingRepositories$: Observable<boolean>;
   public user: BaseGithubUser;
   public name: string;
   public resumeRepositories: any = {
-    resumeRepositories: 12,
+    open_issues: 12,
     size: 23,
     forks: 45
   };
@@ -36,6 +38,8 @@ export class ProfileComponent implements OnInit, OnDestroy {
           this.user = user
         }
       });
+      this.loadingSelectedUser$ = this.store.pipe(select(fromUsers.getLoadingSelectedUser), map((loading: boolean) => loading));
+      this.loadingRepositories$ = this.store.pipe(select(fromUsers.getLoadingRepositories), map((loading: boolean) => loading));
     })
   }
 

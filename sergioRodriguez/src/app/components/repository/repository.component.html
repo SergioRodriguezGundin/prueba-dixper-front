@@ -1,27 +1,26 @@
 <div class="repository">
     <div class="repository-left">
-        <div class="repository-left-type">
-            <div class="private" *ngIf="repository.private">
-                private
-            </div>
-            <div class="public" *ngIf="!repository.private">
-                public
-            </div>
+        <div class="repository-left-type" [ngClass]="(repository.private) ? 'private' : 'public'">
+            <span *ngIf="repository.private">
+                Private
+            </span>
+            <span *ngIf="!repository.private">
+                Public
+            </span>
         </div>
         <div class="repository-left-info">
-            <h3>{{repository.name}}</h3>
+            <h4>{{repository.name}}</h4>
             <div>{{repository.created_at}}</div>
-            <div>{{repository.updated_at}}</div>
         </div>
     </div>
     <div class="repository-right">
         <div class="repository-right-size">
             <div>size:</div>
-            <div>{{repository.size}}</div>
+            <div [ngClass]="(repository.private) ? 'private' : 'public'">{{repository.size}}</div>
         </div>
         <div class="repository-right-forks">
             <div>forks:</div>
-            <div>{{repository.forks}}</div>
+            <div [ngClass]="(repository.private) ? 'private' : 'public'">{{repository.forks}}</div>
         </div>
     </div>
 </div>
