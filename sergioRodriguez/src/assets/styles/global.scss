@@ -7,10 +7,19 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: $dx-regular;
+  src: url('../fonts/press-start-2p-v8-latin-regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 body {
     margin: 0;
     height: 100vh;
     background-color: $light;
+    font-family: $dx-presStart;
+    font-size: $fs-small;
 }
 
 .neumorphism-light {

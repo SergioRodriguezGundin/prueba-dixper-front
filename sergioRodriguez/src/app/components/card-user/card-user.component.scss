@@ -1,22 +1,45 @@
+@import '../../../assets/styles/abstracts/variables';
+
 .dx-card {
   position: relative;
-  img {
+  cursor: pointer;
+  .card-img {
     height: 95%;
     border-radius: 10px;
   }
-  .card-body {
-    position: absolute;
-    top: 50px;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    .actions {
+  .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      clear: float;
+      width: 100%;
+      height: 100%;
+      background-image: linear-gradient(to top, #f4f6f9, transparent);
+      color: #ffffff;
+      border-radius: 10px;
+    .card-body {
+      position: absolute;
+      bottom: 0;
+      color: $gray400;
       display: flex;
-      justify-content: flex-end;
-      > div {
-        margin-right: 10px;
+      width: 100%;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      .actions {
+        display: flex;
+        color: $secoundary;
+        > div {
+          margin-right: 10px;
+        }
+      }
+    }
+  }
+  &:hover {
+    .overlay {
+      .card-body {
+        transform: scale(0.8);
+        transition: .6s;
       }
     }
   }

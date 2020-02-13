@@ -9,7 +9,7 @@
         </a>
         <div class="name">{{user?.login}}</div>
       </div>
-      <app-resume-repository class="container-resume-repository" [resumeRepositories]="resumeRepositories"></app-resume-repository>
+      <app-resume-repository class="container-resume-repository"></app-resume-repository>
     </section>
     <section class="container-user">
       <app-loading class="container-loading" *ngIf="(loadingSelectedUser$ | async)"></app-loading>

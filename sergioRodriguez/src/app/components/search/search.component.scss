@@ -4,6 +4,7 @@
   padding: 0;
   .search-input {
     input {
+      font-size: $fs-small;
       border: none;
       background-color: $gray50;
       width: 320px;
@@ -11,8 +12,8 @@
     }
   }
   .dx-btn {
+    font-size: $fs-small;
     background-color: $secoundary;
-    width: 85px;
     height: 40px;
   }
   .invalid-feedback {
@@ -20,7 +21,7 @@
     position: absolute;
     width: 100%;
     margin-top: 0.25rem;
-    font-size: 80%;
+    font-size: $fs-small;
     color: #dc3545;
   }
 }

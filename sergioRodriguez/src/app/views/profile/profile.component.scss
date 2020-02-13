@@ -19,7 +19,6 @@
             align-items: center;
             justify-content: space-between;
             height: 15%;
-            margin-bottom: 2%;
             &-user {
                 display: flex;
                 align-items: center;
@@ -28,18 +27,17 @@
                     text-decoration: none;
                     color: $primary;
                     .icon-back {
-                        width: 3em;
-                        height: 3em;
                         display: flex;
                         justify-content: center;
                         align-items: center;
                         i {
-                            font-size: 2rem;
+                            font-size: 3.4em;
                         }
                     }
                 }
                 .name {
-                    font-size: 2em;
+                    font-size: $fs-small;
+                    margin-left: 4%;
                 }
             }
             &-repository {
@@ -50,6 +48,7 @@
             display: flex;
             justify-content: space-around;
             height: 95%;
+            padding: 2% 0;
             &--detail {
                 width: 35%;
                 height: 95%;

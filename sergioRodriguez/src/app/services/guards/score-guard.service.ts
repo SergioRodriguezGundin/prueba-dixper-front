@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
+import { CanActivate, ActivatedRouteSnapshot, RouterStateSnapshot, Router } from '@angular/router';
 import { map, take } from 'rxjs/operators';
 import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
@@ -12,17 +12,18 @@ import { getUserByLogin } from 'src/app/services/helpers/userOperations';
 export class ScoreGuard implements CanActivate {
   private user: BaseGithubUser;
 
-  constructor(private store: Store<AppState>) {}
+  constructor(private store: Store<AppState>, private router: Router) {}
 
   canActivate(
     route: ActivatedRouteSnapshot,
     state: RouterStateSnapshot
   ): Observable<boolean> | Promise<boolean> | boolean {
     return this.store.pipe(select(fromUsers.getGithubUsers), map((users: BaseGithubUser[]) => {
-      if (typeof users !== 'undefined' && users !== null) {
+      if (typeof users !== 'undefined' && users !== null && users.length > 0) {
         this.user = getUserByLogin(users, route.params['id'])
         return (this.user.score >= 1) ? true : false;
       }
+      this.router.navigate(['home']);
     }), take(1));
   }
 }

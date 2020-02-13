@@ -21,11 +21,6 @@ export class ProfileComponent implements OnInit, OnDestroy {
   public loadingRepositories$: Observable<boolean>;
   public user: BaseGithubUser;
   public name: string;
-  public resumeRepositories: any = {
-    open_issues: 12,
-    size: 23,
-    forks: 45
-  };
   constructor( private store: Store<AppState>, private actRoute: ActivatedRoute ) { }
 
   ngOnInit(): void {
