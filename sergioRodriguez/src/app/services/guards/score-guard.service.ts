@@ -21,7 +21,7 @@ export class ScoreGuard implements CanActivate {
     return this.store.pipe(select(fromUsers.getGithubUsers), map((users: BaseGithubUser[]) => {
       if (typeof users !== 'undefined' && users !== null && users.length > 0) {
         this.user = getUserByLogin(users, route.params['id'])
-        return (this.user.score >= 1) ? true : false;
+        return (this.user.score >= 30) ? true : false;
       }
       this.router.navigate(['home']);
     }), take(1));
