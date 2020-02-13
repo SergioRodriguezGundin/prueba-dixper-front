@@ -5,6 +5,7 @@ import { Observable, of } from 'rxjs';
 import { map, switchMap, mergeMap, catchError } from 'rxjs/operators';
 
 import * as usersActions from 'src/app/redux/actions/users.actions';
+import * as configActions from 'src/app/redux/actions/config.actions';
 import { Repository } from 'src/app/redux/models/repository.model';
 import { GithubService } from 'src/app/services/api/github.service';
 
@@ -22,7 +23,12 @@ export class UsersEffects {
         switchMap((action: usersActions.GetUsersGithub) => {
             return this.githubService.getGithubUsers(action.payload).pipe(
                 map((githubUsers: any) => new usersActions.GetUsersGithubSuccess(githubUsers.items)),
-                catchError((error: any) => of(new usersActions.GetUsersGithubError())) 
+                catchError((error: any) => {
+                    return [
+                        new usersActions.SetDefaultState(), 
+                        new configActions.SetError()
+                    ];
+                }) 
             );
         })
     )
@@ -48,7 +54,12 @@ export class UsersEffects {
         switchMap((action: usersActions.GetRepositoriesByUser) => {
             return this.githubService.getRepositoriesByUser(action.payload).pipe(
                 map((repositories: Repository[]) => new usersActions.GetRepositoriesByUserSuccess(repositories)),
-                catchError((error: any) => of(new usersActions.GetRepositoriesByUserError())) 
+                catchError((error: any) => {
+                    return [
+                        new usersActions.SetDefaultState(),
+                        new configActions.SetError()
+                    ];
+                }) 
             );
         })
     )

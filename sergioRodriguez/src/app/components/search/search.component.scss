@@ -1,27 +1,61 @@
 @import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
+
 
 .navbar {
   padding: 0;
-  .search-input {
-    input {
-      font-size: $fs-small;
-      border: none;
-      background-color: $gray50;
-      width: 320px;
+  width: 100%;
+  &-form {
+    justify-content: space-between;
+    width: 100%;
+    .search-input {
+      width: 75%;
+      &-icon {
+        position: absolute;
+        height: 100%;
+        width: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        i {
+          font-size: 20px;
+        }
+      }
+      input {
+        font-size: $dx-medium;
+        border: none;
+        background-color: $gray50;
+        width: 100%;
+        height: 40px;
+        padding: 0 0 0 14%;
+      }
+    }
+    .dx-btn {
+      font-size: $dx-small;
+      background-color: $secoundary;
+      color: $white;
       height: 40px;
     }
+    .invalid-feedback {
+      display: block;
+      position: absolute;
+      width: 100%;
+      margin-top: 0.25rem;
+      font-size: $dx-small;
+      color: #dc3545;
+    }
   }
-  .dx-btn {
-    font-size: $fs-small;
-    background-color: $secoundary;
-    height: 40px;
-  }
-  .invalid-feedback {
-    display: block;
-    position: absolute;
-    width: 100%;
-    margin-top: 0.25rem;
-    font-size: $fs-small;
-    color: #dc3545;
+}
+
+@include tablet {
+  .navbar {
+      &-form {
+          .search-input {
+              width: 60%;
+              input {
+                font-size: $dx-small;
+              }
+          }
+      }
   }
 }

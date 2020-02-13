@@ -1,0 +1,27 @@
+@import './abstracts/variables';
+
+@mixin desktop {
+  @media (max-width : 1240px) {
+    @content;
+  }
+}
+@mixin small-desktop {
+  @media (max-width : 1080px) {
+    @content;
+  }
+}
+@mixin tablet {
+  @media (max-width : 767px) {
+    @content;
+  }
+}
+@mixin phablet {
+  @media (max-width : 599px) {
+    @content;
+  }
+}
+@mixin mobile {
+  @media (max-width : 479px) {
+    @content;
+  }
+}

@@ -8,6 +8,8 @@ import { HomeComponent } from 'src/app/views/home/home.component';
       CommonModule,
       HomeRoutingModule
     ],
-    declarations: [HomeComponent]
+    declarations: [
+      HomeComponent
+    ]
   })
   export class HomeModule { }

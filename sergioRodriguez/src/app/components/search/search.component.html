@@ -1,12 +1,15 @@
 <nav class="navbar">
-  <form [formGroup]="userForm" novalidate (ngSubmit)="submit()" class="form-inline">
+  <form [formGroup]="userForm" novalidate (ngSubmit)="submit()" class="form-inline navbar-form">
     <div class="search-input">
+      <span class="search-input-icon">
+        <i class="fas fa-search"></i>
+      </span>
       <input
         class="form-control mr-sm-2"
         type="search"
         formControlName="name"
         id="name" 
-        placeholder="Search"
+        placeholder="Search profile..."
         aria-label="Search"
         required
       />

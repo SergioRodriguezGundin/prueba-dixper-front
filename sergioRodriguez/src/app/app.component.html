@@ -1,1 +1,2 @@
 <router-outlet></router-outlet>
+<app-error [ngClass]="(error$ | async) ? 'show' : 'hide'" *ngIf="(error$ | async)"></app-error>

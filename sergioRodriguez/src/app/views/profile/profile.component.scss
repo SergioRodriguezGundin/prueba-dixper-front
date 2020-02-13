@@ -1,19 +1,8 @@
 @import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
 
 .layout {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    grid-template-rows: repeat(2, 0.4fr) repeat(2, 1fr) 0.4fr;
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-    height: 100vh;
     .box {
-        grid-area: 2 / 2 / 5 / 5;
-        display: flex;
-        flex-direction: column;
-        padding: 2%;
-        border-radius: 12px;
-        box-shadow: $box-shadow-card;
         .container-resume {
             display: flex;
             align-items: center;
@@ -36,7 +25,7 @@
                     }
                 }
                 .name {
-                    font-size: $fs-small;
+                    font-size: $dx-small;
                     margin-left: 4%;
                 }
             }
@@ -49,16 +38,41 @@
             justify-content: space-around;
             height: 95%;
             padding: 2% 0;
-            &--detail {
+            &-detail {
                 width: 35%;
                 height: 95%;
                 overflow: hidden;
             }
-            &--repositories {
+            &-repositories {
                 width: 65%;
                 height: 90%;
                 flex-direction: column;
                 overflow-y: scroll;
+            }
+        }
+    }
+}
+
+
+@include tablet {
+    .layout {
+        .box {
+            .container-resume {
+                &-repository {
+                    display: none;
+                }
+            }
+            .container-user {
+                flex-direction: column;
+                height: auto;
+                &-detail {
+                    width: 100%;
+                    height: auto;
+                }
+                &-repositories {
+                    width: 100%;
+                    height: auto;
+                }
             }
         }
     }

@@ -24,10 +24,19 @@
       display: flex;
       width: 100%;
       flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
-      overflow: auto;
-      .actions {
+      &-info {
+        align-self: center;
+        text-align: center;
+        margin-bottom: 8%;
+        .title {
+          color: $gray800;
+        }
+        .id {
+          color: $gray300;
+        }
+      }
+      &-actions {
+        align-self: flex-end;
         display: flex;
         color: $secoundary;
         > div {

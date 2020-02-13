@@ -1,4 +1,5 @@
 @import '../../../assets/styles/abstracts/variables';
+@import '../../../assets/styles/mixins';
 
 .repository {
   display: flex;
@@ -35,9 +36,12 @@
       flex-direction: column;
       align-items: flex-start;
       margin-left: 4%;
-      > div {
-        color: $gray500;
-        font-size: $fs-small;
+      .name {
+        font-size: $dx-medium;
+      }
+      .created {
+        color: $gray200;
+        font-size: $dx-small;
       }
     }
   }
@@ -49,13 +53,39 @@
     width: 50%;
     &-size,  &-forks {
       display: flex;
-      font-size: $fs-big;
+      font-size: $dx-small;
       .public {
         color: $primary;
       }
       .private {
         color: $secoundary;
       }
+    }
+  }
+}
+
+@include tablet {
+  .repository {
+    &-left {
+      &-info {
+        .name {
+          font-size: $dx-small;
+        }
+        .created {
+          font-size: $dx-small-xs;
+        }
+      }
+    }
+  }
+}
+
+@include mobile {
+  .repository {
+    &-left {
+      width: 100%;
+    }
+    &-right {
+      display: none;
     }
   }
 }

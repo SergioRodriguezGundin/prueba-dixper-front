@@ -25,7 +25,6 @@ import { CardUserComponent } from 'src/app/components/card-user/card-user.compon
 import { GithubService } from 'src/app/services/api/github.service';
 import { LoadingComponent } from 'src/app/components/common/loading/loading.component';
 import { EmptyStateComponent } from 'src/app/components/common/empty-state/empty-state.component';
-import { ErrorComponent } from 'src/app/components/common/error/error.component';
 
 @NgModule({
   imports: [
@@ -47,8 +46,7 @@ import { ErrorComponent } from 'src/app/components/common/error/error.component'
     SearchComponent,
     CardUserComponent,
     LoadingComponent,
-    EmptyStateComponent,
-    ErrorComponent
+    EmptyStateComponent
   ],
   providers: [GithubService]
 })

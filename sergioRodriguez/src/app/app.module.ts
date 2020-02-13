@@ -11,16 +11,20 @@ import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ScoreGuard } from './services/guards/score-guard.service';
+import { ErrorComponent } from './components/common/error/error.component';
+import { configReducer } from './redux/reducers/config.reducer';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ErrorComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     StoreModule.forRoot({}),
+    StoreModule.forFeature('config', configReducer),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
