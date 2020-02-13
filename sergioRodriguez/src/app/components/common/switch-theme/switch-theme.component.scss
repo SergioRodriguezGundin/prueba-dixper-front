@@ -1,12 +1,17 @@
 @import '../../../../assets/styles/abstracts/variables';
+@import '../../../../assets/styles/mixins';
 
 .toggleWrapper {
   position: absolute;
   top: 8%;
-  left: 8%;
+  left: 10%;
   overflow: hidden;
   padding: 0 200px;
   transform: translate3d(-50%, -50%, 0);
+
+  @include desktop {
+    left: 18%;
+  }
   
   input {
     position: absolute;
